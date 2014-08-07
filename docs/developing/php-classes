@@ -1,0 +1,9 @@
+## Class sources
+PHP classes will be autoloaded from the `php-classes` root collection. Files within `php-classes` should be organized according
+to [PSR-4 standards.](https://github.com/php-fig/fig-standards/blob/master/proposed/psr-4-autoloader/psr-4-autoloader.md). 
+
+[PSR-0](https://github.com/php-fig/fig-standards/blob/master/accepted/PSR-0.md)'s underscores-as-namespace style is still supported for compatibility purposes but should be considered deprecated.
+
+## Configuration scripts
+Files in the `php-config` root collection are optional and will be executed by the autoloader if present when a corresponding class is loaded, before flow returns to the original code.
+These can be used to dynamically configure a class with site-, sessino-, or request- specific customizations via any public static properties or methods exposed by the class.
