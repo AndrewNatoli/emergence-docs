@@ -1,0 +1,147 @@
+{
+    "setup": {
+        "title": "Setting up Emergence",
+        "docs": {
+            "ubuntu": {
+                "title": "Ubuntu Linux",
+                "docs": {
+                    "14.04": {
+                        "title": "Setting up Emergence with Ubuntu 14.04"
+                    },
+                    "13.10": {
+                        "title": "Setting up Emergence with Ubuntu 13.10"
+                    },
+                    "13.04": {
+                        "title": "Setting up Emergence with Ubuntu 13.04"
+                	}
+                }
+            },
+            "gentoo": {
+                "title": "Setting up Emergence with Gentoo Linux"
+            }
+        }
+    },
+    "unit-testing": {
+        "title": "Unit testing",
+        "docs": {
+            "php": {
+        	    "title": "Unit testing PHP"
+            }
+    	}
+    },
+    "how-it-works": {
+        "title": "How Emergence works",
+        "docs": {
+            "kernel": {
+                "title": "The kernel",
+                "body": "_Coming Soon_"
+            },
+            "provisioning": {
+                "title": "Site provisioning (coming soon)",
+                "body": "_Coming soon_"
+            },
+            "vfs": {
+                "title": "Virtual filesystem (coming soon)",
+                "body": "_Coming soon_"
+            },
+            "inheritence": {
+                "title": "Inheritance (coming soon)",
+                "body": "_Coming soon_"
+            }
+    	}
+    },
+    "developing": {
+        "title": "Developing with Emergence (work in progress)",
+        "docs": {
+            "connecting": {
+                "title": "Connecting"
+            },
+            "filesystem-hierarchy": {
+                "title": "Filesystem hierarchy"
+            },
+            "php-classes": {
+                "title": "PHP classes"
+            },
+            "routing": {
+                "title": "Routing"
+            },
+            "rendering": {
+                "title": "Rendering"
+            },
+            "accessing-mysql": {
+                "title": "Accessing MySQL databases from other clients"
+            },
+            "sass": {
+                "title": "Using Sass to compile CSS"
+            }
+        }
+    },
+    "mvc": {
+        "title": "Working with models, views, and controllers",
+        "docs": {
+            "models": {
+                "title": "Models"
+            },
+            "views": {
+                "title": "Views (coming soon)",
+                "body": "_Coming soon_"
+            },
+            "controllers": {
+                "title": "Controllers (coming soon)",
+                "body": "_Coming soon_"
+            }
+        }
+    },
+    "git": {
+        "title": "Git integration",
+        "docs": {
+            "init": {
+                "title": "Initializing a repository link"
+            },
+            "commit": {
+                "title": "Commit changes"
+            },
+            "pull": {
+                "title": "Pull (coming soon)",
+                "body": "_Coming soon_"
+            }
+        }
+    },
+    "localization": {
+        "title": "Localization",
+        "docs": {
+            "overview": {
+                "title": "Overview"
+            },
+            "marking": {
+                "title": "Marking translatable strings"
+            },
+            "pot": {
+                "title": "Generating a .pot file"
+            },
+            "po": {
+                "title": "Creating and uploading a .po file"
+            },
+            "switching": {
+                "title": "Switching locale"
+            }
+        }
+    },
+    "sencha": {
+        "title": "Sencha integration",
+        "docs": {
+            "create": {
+                "title": "Creating an app (coming soon)",
+                "body": "_Coming soon_"
+            },
+            "test": {
+                "title": "Testing an app (coming soon)",
+                "body": "_Coming soon_"
+            },
+            "build": {
+                "title": "Building an app (coming soon)",
+                "body": "_Coming soon_"
+            }
+        }
+    }
+}
