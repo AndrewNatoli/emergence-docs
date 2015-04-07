@@ -13,7 +13,7 @@
                     },
                     "13.04": {
                         "title": "Setting up Emergence with Ubuntu 13.04"
-                	}
+                    }
                 }
             },
             "gentoo": {
@@ -25,9 +25,9 @@
         "title": "Unit testing",
         "docs": {
             "php": {
-        	    "title": "Unit testing PHP"
+                "title": "Unit testing PHP"
             }
-    	}
+        }
     },
     "how-it-works": {
         "title": "How Emergence works",
@@ -48,7 +48,7 @@
                 "title": "Inheritance (coming soon)",
                 "body": "_Coming soon_"
             }
-    	}
+        }
     },
     "developing": {
         "title": "Developing with Emergence (work in progress)",
@@ -131,8 +131,7 @@
         "title": "Sencha integration",
         "docs": {
             "create": {
-                "title": "Creating an app (coming soon)",
-                "body": "_Coming soon_"
+                "title": "Creating an app (coming soon)"
             },
             "test": {
                 "title": "Testing an app (coming soon)",
