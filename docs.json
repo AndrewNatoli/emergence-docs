@@ -131,15 +131,14 @@
         "title": "Sencha integration",
         "docs": {
             "create": {
-                "title": "Creating an app (coming soon)"
+                "title": "Creating an app"
             },
             "test": {
                 "title": "Testing an app (coming soon)",
                 "body": "_Coming soon_"
             },
             "build": {
-                "title": "Building an app (coming soon)",
-                "body": "_Coming soon_"
+                "title": "Building an app"
             }
         }
     }
