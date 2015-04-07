@@ -29,17 +29,17 @@ The class won't be loaded until PHP actually encounters it in the controllers.
 	class Example extends ActiveRecord {
 		// ActiveRecord configuration
 		static public $tableName = 'examples'; // the name of this model's table
-		
+
 		// controllers will use these values to figure out what templates to use
 		static public $singularNoun = 'example'; // a singular noun for this model's object
 		static public $pluralNoun = 'examples'; // a plural noun for this model's object
-		
+
 		// the lowest-level class in your table requires these lines,
 		// they can be manipulated via config files to plug in same-table subclasses
 		static public $rootClass = __CLASS__;
 		static public $defaultClass = __CLASS__;
 		static public $subClasses = array(__CLASS__);
-	
+
 		// gets combined with all the extended layers
 		static public $fields = array(
 			'Title'
@@ -64,8 +64,8 @@ If you have SQL access and have a sufficient enough background to make custom ch
 These fields are:
 
 1. ID - Automatically incremented ID.
-2. Class - The name of the class to instantiate the class as. Similar classes can share tables. 
-3. Creator - The ID of the creator. This is sometimes assumed as the user currently logged in but can be manually set. 
+2. Class - The name of the class to instantiate the class as. Similar classes can share tables.
+3. Creator - The ID of the creator. This is sometimes assumed as the user currently logged in but can be manually set.
 4. Created - A SQL timestamp field that is set to the current timestamp when a new record is created.
 
 These fields come with every ActiveRecord or VersionedRecord model.
@@ -76,7 +76,7 @@ Once the table is created the Model is ready to use.
 When creating an ActiveRecord model one must first choose whether or not they need to have the model versioned. A versioned model will use an extra SQL table to store the history of every create, edit, or delete of records within that model. A configuration of an ActiveRecord model requires the definition of the model's SQL table, a singular noun and plural noun describing the name of said model as well as the fields that are part of the model. A versioned model will also require the definition of the name of the SQL history table. The name of the model is derivied from the name of the class.
 
 ###Defining a Model's Fields
-A model's feidls are defined in the fields array. The array's key will be the name of the field within the model as well as the column name where the field's data will be stored in the SQL table. You may use a simple string to specify what type to use for the field or an associative array which may contain other field options. Not specifying any type will default to a varchar (255) in SQL. The chart below explains the various allowed field types as well as any allowed configuration options available to that field type.
+A model's fields are defined in the fields array. The array's key will be the name of the field within the model as well as the column name where the field's data will be stored in the SQL table. You may use a simple string to specify what type to use for the field or an associative array which may contain other field options. Not specifying any type will default to a varchar (255) in SQL. The chart below explains the various allowed field types as well as any allowed configuration options available to that field type.
 
 
 ####Field Types
@@ -107,11 +107,11 @@ There are a couple ways to create a record.
 Here is how to do it from a blank record that you can manually fill out the attributes of before saving.
 ```php
     <?php
-    
+
     $object = new Example();
     $object->Title = 'i am a string.';
     $object->save(); // runs dynamic public function save
-    
+
     echo $object->ID; // the automatically assigned ID of this object in SQL
     // output: 1, 2, 3, 4, etc everytime you run lines 3 through 5
 ```
@@ -120,15 +120,15 @@ Sometimes you'll know what all the fields are right away. For that there's anoth
 
 ```php
     <?php
-    
+
     // create and save at the same time
     $object = Example::create(array(
         'Title'	=>	'i am a string.'
     	,'CreatorID'	=>	1
     ),true); // <|-- This boolean(autoSave) is false by default, you will need to uncomment the save() line below if you omit this option or set it to false
-    
+
     //$object->save();
-    
+
     echo $object->ID; // the automatically assigned ID of this object in SQL
 ```
 
@@ -136,7 +136,7 @@ Sometimes you'll know what all the fields are right away. For that there's anoth
 Of course there's also multiple ways of editing a record.
 ```php
     <?php
-    
+
     $object = Example::getByID(1); // returns an instance of an Example record
     $object->Title = 'i am a string too.';
     $object->save(); // runs dynamic public function save
@@ -145,7 +145,7 @@ Of course there's also multiple ways of editing a record.
 There's also a way of changing multiple fields in an existing object with only one array input.
 ```php
     <?php
-    
+
     $object = Example::getByID(1); // returns an instance of an Example record
     $object->setFields(array(
         'Title'	=>	'i am a string.'
@@ -157,7 +157,7 @@ There's also a way of changing multiple fields in an existing object with only o
 ####Deleting a Record
 ```php
     <?php
-    
+
     $object = Example::getByID(1); // returns an instance of an Example record
     $object->destroy(); // runs dynamic public function destroy
 ```
@@ -195,24 +195,24 @@ In this context a record is an instantiated ActiveRecord object in PHP.
 ####Examples
 ```php
     <?php
-    
+
     // Simple WHERE: `column` = "value" (escaping is automatic)
     foreach(Example::getAllByField('CreatorID', 7) AS $object)
     {
         echo "Found record #$object->ID: $object->Title<br>";
     }
-    
+
     // Advanced WHERE: array of conditions get combined with AND
     $conditions = array(
     	'CreatorID' => 8  // key => value pairs get turned into `key` = "value" (escaping is automatic)
     	,'Title LIKE "TIL%"' // keyless strings get included as-is (you must escape user values! - see DB::escape)
     );
-    
+
     foreach(Example::getAllByWhere($conditions) AS $object)
     {
     	echo "Found record #$object->ID: $object->Title<br>";
     }
-    
+
     // Custom query: do whatever you want as long as it SELECTs * from the model's table
     $sql = 'SELECT * FROM examples JOIN people ON people.ID = examples.CreatorID WHERE people.Email LIKE "%@emr.ge"';
     foreach(Example::getAllByQuery($sql) AS $object)
